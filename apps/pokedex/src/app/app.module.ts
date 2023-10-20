@@ -4,14 +4,14 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { appRoutes } from './app.routes';
 import { NxWelcomeComponent } from './nx-welcome.component';
-import { CardComponent } from '@pokedex/ui';
+import { HomeModule } from './home/home.module';
 
 @NgModule({
   declarations: [AppComponent, NxWelcomeComponent],
   imports: [
     BrowserModule,
     RouterModule.forRoot(appRoutes, { initialNavigation: 'enabledBlocking' }),
-    CardComponent,
+    HomeModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
