@@ -1,5 +1,5 @@
 export interface PokemonCard {
-  id: number;
+  id: string;
   name: string;
   image: string;
 }

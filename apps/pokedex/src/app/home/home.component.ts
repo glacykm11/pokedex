@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { PokemonsService } from '@pokedex/services';
+import { PokemonCard, PokemonsService } from '@pokedex/services';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'pokedex-home',
@@ -7,7 +8,7 @@ import { PokemonsService } from '@pokedex/services';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  public pokemon$: any;
+  public pokemon$!: Observable<PokemonCard[]>;
   constructor(private pokemonService: PokemonsService) {}
 
   ngOnInit() {
