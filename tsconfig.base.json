@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@pokedex/pokemon-info": ["libs/pokemon-info/src/index.ts"],
       "@pokedex/services": ["libs/shared/services/src/index.ts"],
       "@pokedex/ui": ["libs/shared/ui/src/index.ts"]
     }
