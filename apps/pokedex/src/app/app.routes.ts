@@ -7,10 +7,6 @@ export const appRoutes: Route[] = [
     component: HomeComponent,
   },
   {
-    path: '**',
-    component: HomeComponent,
-  },
-  {
     path: 'pokemon-info/:id',
     loadChildren: () =>
       import('@pokedex/pokemon-info').then((m) => m.PokemonInfoModule),
