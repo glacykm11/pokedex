@@ -8,7 +8,6 @@ export const appRoutes: Route[] = [
   },
   {
     path: '**',
-    pathMatch: 'full',
     component: HomeComponent,
   },
   {
