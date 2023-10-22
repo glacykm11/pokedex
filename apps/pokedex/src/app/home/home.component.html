@@ -3,16 +3,10 @@
   <pokedex-search></pokedex-search>
 </section>
 <section class="wrapper__cards">
-  <pokedex-card></pokedex-card>
-  <pokedex-card></pokedex-card>
-  <pokedex-card></pokedex-card>
-  <pokedex-card></pokedex-card>
-  <pokedex-card></pokedex-card>
-  <pokedex-card></pokedex-card>
-  <pokedex-card></pokedex-card>
-  <pokedex-card></pokedex-card>
-  <pokedex-card></pokedex-card>
-  <pokedex-card></pokedex-card>
-  <pokedex-card></pokedex-card>
-  <pokedex-card></pokedex-card>
+  <pokedex-card
+    *ngFor="let pokemon of pokemon$ | async"
+    [pokemonId]="pokemon.id"
+    [pokemonName]="pokemon.name"
+    [pokemonImage]="pokemon.image"
+  ></pokedex-card>
 </section>
