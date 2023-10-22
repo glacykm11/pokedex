@@ -1,4 +1,4 @@
-<section class="pokemon__card">
+<section class="pokemon__card" (click)="emitCardClick(pokemonId)">
   <article class="pokemon__card--border"></article>
   <img class="pokemon__card--pokemonImage" [src]="pokemonImage" />
   <p class="pokemon__card--pokemonId">#{{ pokemonId }}</p>
