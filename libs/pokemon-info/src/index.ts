@@ -1,1 +1,1 @@
-export * from './lib/pokemon-info.module';
+export * from './lib/pokemon-info/pokemon-info.module';
