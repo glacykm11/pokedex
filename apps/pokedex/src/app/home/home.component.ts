@@ -14,4 +14,8 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.pokemon$ = this.pokemonService.getPokemonNames();
   }
+
+  public getCardClick(pokemonId: string) {
+    console.log('any' + pokemonId);
+  }
 }

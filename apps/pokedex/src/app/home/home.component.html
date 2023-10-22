@@ -9,6 +9,7 @@
       [pokemonId]="pokemon.id"
       [pokemonName]="pokemon.name"
       [pokemonImage]="pokemon.image"
+      (clickCard)="getCardClick($event)"
     ></pokedex-card>
   </ng-container>
   <ng-template #loading>
