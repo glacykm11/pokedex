@@ -1,20 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import {
-  Observable,
-  concat,
-  forkJoin,
-  switchMap,
-  map,
-  tap,
-  OperatorFunction,
-} from 'rxjs';
-import {
-  PokemonAPI,
-  PokemonCard,
-  PokemonInfo,
-  Results,
-} from '@pokedex/services';
+import { Observable, forkJoin, switchMap, map } from 'rxjs';
+import { PokemonCard, PokemonInfo } from '@pokedex/services';
+
 @Injectable({
   providedIn: 'root',
 })
@@ -30,7 +18,7 @@ export class PokemonsService {
       switchMap((value: any) => {
         const objectValues = Object.values(value.results);
         const allObs$ = objectValues.map((pokemon: any) =>
-          this.getPokemonById(pokemon.url)
+          this.getPokemonByUrl(pokemon.url)
         );
         return forkJoin(allObs$);
       }),
@@ -38,7 +26,7 @@ export class PokemonsService {
     );
   }
 
-  public getPokemonById(url: string) {
+  public getPokemonByUrl(url: string): Observable<object> {
     return this.httpClient.get(url);
   }
 
