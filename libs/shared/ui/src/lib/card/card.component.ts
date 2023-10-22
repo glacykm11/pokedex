@@ -7,8 +7,7 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./card.component.scss'],
 })
 export class CardComponent {
-  @Input() pokemonImage =
-    'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png';
-  @Input() pokemonId = '001';
-  @Input() pokemonName = 'Bulbasaur';
+  @Input() pokemonImage!: string;
+  @Input() pokemonId!: string;
+  @Input() pokemonName!: string;
 }
