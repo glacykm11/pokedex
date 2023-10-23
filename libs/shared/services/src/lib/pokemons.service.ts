@@ -33,7 +33,7 @@ export class PokemonsService {
   private pokemonCardMapper(pokemon: PokemonInfo[]): PokemonCard[] {
     return pokemon.map((value: PokemonInfo) => ({
       id: value.id.toString(),
-      image: value.sprites.front_default,
+      image: value.sprites.other['official-artwork'].front_default,
       name: value.name,
     }));
   }
