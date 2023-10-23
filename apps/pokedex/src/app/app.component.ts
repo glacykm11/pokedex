@@ -1,5 +1,4 @@
-import { Component, Renderer2 } from '@angular/core';
-import { NavigationStart, Router } from '@angular/router';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'pokedex-root',
@@ -8,21 +7,4 @@ import { NavigationStart, Router } from '@angular/router';
 })
 export class AppComponent {
   title = 'pokedex';
-  previousUrl!: string;
-
-  constructor(private renderer: Renderer2, private router: Router) {
-    this.router.events.subscribe((event) => {
-      if (event instanceof NavigationStart) {
-        if (this.previousUrl) {
-          this.renderer.removeClass(document.body, this.previousUrl);
-        }
-        const currentUrlSlug = event.url.slice(1);
-        console.log(currentUrlSlug);
-        if (currentUrlSlug) {
-          this.renderer.addClass(document.body, currentUrlSlug);
-        }
-        this.previousUrl = currentUrlSlug;
-      }
-    });
-  }
 }
