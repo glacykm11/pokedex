@@ -1,0 +1,44 @@
+@mixin fontStyle {
+    color: var(--grayscale-white, #FFF);
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 32px;
+}
+.details {
+    display: block;
+    min-height: 100vh;
+
+    &__header {
+        display: grid;
+        grid-template-columns: 1fr 6fr 1fr;
+        padding: 20px 20px 24px 20px;
+        gap: 8px;
+    }
+
+    &__title {
+        @include fontStyle();
+        font-size: 24px;
+    }
+
+    &__id {
+        @include fontStyle();
+        font-size: 12px;
+    }
+
+    &__wrapper {
+        display: flex; 
+        justify-content: center;
+
+        &--pokeball {
+            opacity: 0.1; 
+            position: fixed; 
+            right: 5px; 
+            top: 2px
+        }
+        &--pokemon {
+            width: 200px; 
+            z-index: 1
+        }
+    }
+}

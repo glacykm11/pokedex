@@ -1,4 +1,18 @@
-<pokedex-type-chip
-  pokemonColor="#74CB48"
-  pokemonType="Grass"
-></pokedex-type-chip>
+<section class="details" [style.background]="'var(--pokemon-type-grass)'">
+  <div class="details__header">
+    <img src="assets/arrowBack-icon.svg" (click)="navigateToHome()" />
+    <p class="details__title">Bulbasaur</p>
+    <p class="details__id">#001</p>
+  </div>
+  <div class="details__wrapper">
+    <img
+      src="assets/pokeball-background.svg"
+      class="details__wrapper--pokeball"
+    />
+    <img
+      src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png"
+      class="details__wrapper--pokemon"
+    />
+  </div>
+  <pokedex-type-chip pokemonType="Grass"></pokedex-type-chip>
+</section>
