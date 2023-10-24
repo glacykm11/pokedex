@@ -9,10 +9,9 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./type-chip.component.scss'],
 })
 export class TypeChipComponent {
-  @Input() pokemonColor!: string;
   @Input() pokemonType!: string;
 
-  public backgroundColor(pokemonColor: string): any {
-    return { background: pokemonColor };
+  public backgroundColor(pokemonType: string): any {
+    return `{ 'background': var(--pokemon-type-${pokemonType.toLowerCase()}) }`;
   }
 }

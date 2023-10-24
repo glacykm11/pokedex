@@ -1,1 +1,4 @@
-<span [ngStyle]="backgroundColor(pokemonColor)">{{ pokemonType }}</span>
+<span
+  [style.background]="'var(--pokemon-type-' + pokemonType.toLowerCase() + ')'"
+  >{{ pokemonType }}</span
+>
