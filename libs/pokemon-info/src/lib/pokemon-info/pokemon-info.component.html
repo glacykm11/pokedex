@@ -16,11 +16,83 @@
   </div>
 
   <div
-    style="height: 640px; background: #fff; border-radius: 8px; margin: 0 4px"
+    style="
+      height: 640px;
+      background: #fff;
+      border-radius: 8px;
+      margin: 0 4px;
+      position: relative;
+      bottom: 3.5rem;
+      padding: 56px 20px 20px 20px;
+    "
   >
     <div style="display: flex; justify-content: center; gap: 16px">
       <pokedex-type-chip pokemonType="Grass"></pokedex-type-chip>
       <pokedex-type-chip pokemonType="Poison"></pokedex-type-chip>
     </div>
+    <section>
+      <p
+        style="
+          color: var(--pokmon-type-grass, #74cb48);
+          margin: 16px 0;
+          text-align: center;
+          font-family: Poppins;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: 16px;
+        "
+      >
+        About
+      </p>
+      <div style="display: flex; justify-content: space-evenly">
+        <pokedex-attribute
+          icon="assets/weight-icon.svg"
+          value="6,9 kg"
+          description="Weigth"
+          style="border-right: 1px solid #e0e0e0"
+        ></pokedex-attribute>
+        <pokedex-attribute
+          icon="assets/ruler-icon.svg"
+          value="0,7 m"
+          description="Height"
+          style="border-right: 1px solid #e0e0e0"
+        ></pokedex-attribute>
+        <pokedex-attribute
+          value="Chlorophyll
+          Overgrow"
+          description="Moves"
+        ></pokedex-attribute>
+      </div>
+      <p
+        style="
+          color: var(--grayscale-dark, #1d1d1d);
+          text-align: justify;
+          font-family: Poppins;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 16px;
+          margin: 16px 0;
+        "
+      >
+        There is a plant seed on its back right from the day this Pokémon is
+        born. The seed slowly grows larger.
+      </p>
+      <p
+        style="
+          color: var(--pokmon-type-grass, #74cb48);
+          margin: 16px 0;
+          text-align: center;
+          font-family: Poppins;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 700;
+          line-height: 16px;
+        "
+      >
+        Base Stats
+      </p>
+    </section>
   </div>
 </section>
