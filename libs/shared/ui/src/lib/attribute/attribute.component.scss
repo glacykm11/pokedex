@@ -1,0 +1,22 @@
+@mixin fontStyle {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 400;
+}
+.attribute {
+    &__value {
+        @include fontStyle();
+        font-size: 10px;
+        line-height: 16px;
+        color: var(--grayscale-dark, #1D1D1D);
+        width: 57px;
+        text-align: justify;
+    }
+    &__description {
+        @include fontStyle();
+        color: var(--grayscale-medium, #666);
+        font-size: 8px;
+        line-height: 12px;
+        margin: 8px 0 0 14px;
+    }
+}
