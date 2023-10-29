@@ -3,7 +3,11 @@ import { CommonModule } from '@angular/common';
 
 import { PokemonInfoRoutingModule } from './pokemon-info-routing.module';
 import { PokemonInfoComponent } from './pokemon-info.component';
-import { TypeChipComponent, AttributeComponent } from '@pokedex/ui';
+import {
+  TypeChipComponent,
+  AttributeComponent,
+  ProgressBarComponent,
+} from '@pokedex/ui';
 
 @NgModule({
   declarations: [PokemonInfoComponent],
@@ -12,6 +16,7 @@ import { TypeChipComponent, AttributeComponent } from '@pokedex/ui';
     PokemonInfoRoutingModule,
     TypeChipComponent,
     AttributeComponent,
+    ProgressBarComponent,
   ],
   exports: [PokemonInfoComponent],
 })

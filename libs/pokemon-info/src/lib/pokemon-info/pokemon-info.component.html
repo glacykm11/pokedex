@@ -4,48 +4,25 @@
     <p class="details__title">Bulbasaur</p>
     <p class="details__id">#001</p>
   </div>
-  <div class="details__wrapper">
+  <div class="details__imageWrapper">
     <img
       src="assets/pokeball-background.svg"
-      class="details__wrapper--pokeball"
+      class="details__imageWrapper--pokeball"
     />
     <img
       src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png"
-      class="details__wrapper--pokemon"
+      class="details__imageWrapper--pokemon"
     />
   </div>
 
-  <div
-    style="
-      height: 640px;
-      background: #fff;
-      border-radius: 8px;
-      margin: 0 4px;
-      position: relative;
-      bottom: 3.5rem;
-      padding: 56px 20px 20px 20px;
-    "
-  >
-    <div style="display: flex; justify-content: center; gap: 16px">
+  <div class="details__cardWrapper">
+    <div class="details__cardWrapper--typeChips">
       <pokedex-type-chip pokemonType="Grass"></pokedex-type-chip>
       <pokedex-type-chip pokemonType="Poison"></pokedex-type-chip>
     </div>
     <section>
-      <p
-        style="
-          color: var(--pokmon-type-grass, #74cb48);
-          margin: 16px 0;
-          text-align: center;
-          font-family: Poppins;
-          font-size: 16px;
-          font-style: normal;
-          font-weight: 700;
-          line-height: 16px;
-        "
-      >
-        About
-      </p>
-      <div style="display: flex; justify-content: space-evenly">
+      <p class="details__cardWrapper--title">About</p>
+      <div class="details__cardWrapper--about">
         <pokedex-attribute
           icon="assets/weight-icon.svg"
           value="6,9 kg"
@@ -64,35 +41,37 @@
           description="Moves"
         ></pokedex-attribute>
       </div>
-      <p
-        style="
-          color: var(--grayscale-dark, #1d1d1d);
-          text-align: justify;
-          font-family: Poppins;
-          font-size: 16px;
-          font-style: normal;
-          font-weight: 400;
-          line-height: 16px;
-          margin: 16px 0;
-        "
-      >
+      <p class="details__cardWrapper--description">
         There is a plant seed on its back right from the day this Pokémon is
         born. The seed slowly grows larger.
       </p>
-      <p
-        style="
-          color: var(--pokmon-type-grass, #74cb48);
-          margin: 16px 0;
-          text-align: center;
-          font-family: Poppins;
-          font-size: 16px;
-          font-style: normal;
-          font-weight: 700;
-          line-height: 16px;
-        "
-      >
-        Base Stats
-      </p>
+      <p class="details__cardWrapper--title">Base Stats</p>
+      <div class="details__cardWrapper--baseStats">
+        <section class="borderRight">
+          <article>HP</article>
+          <article>ATK</article>
+          <article>DEF</article>
+          <article>SATK</article>
+          <article>SDEF</article>
+          <article>SPD</article>
+        </section>
+        <section>
+          <article class="textAlignCenter">045</article>
+          <article class="textAlignCenter">049</article>
+          <article class="textAlignCenter">049</article>
+          <article class="textAlignCenter">065</article>
+          <article class="textAlignCenter">065</article>
+          <article class="textAlignCenter">045</article>
+        </section>
+        <section>
+          <pokedex-progress-bar pokemonType="grass"></pokedex-progress-bar>
+          <pokedex-progress-bar pokemonType="grass"></pokedex-progress-bar>
+          <pokedex-progress-bar pokemonType="grass"></pokedex-progress-bar>
+          <pokedex-progress-bar pokemonType="grass"></pokedex-progress-bar>
+          <pokedex-progress-bar pokemonType="grass"></pokedex-progress-bar>
+          <pokedex-progress-bar pokemonType="grass"></pokedex-progress-bar>
+        </section>
+      </div>
     </section>
   </div>
 </section>
