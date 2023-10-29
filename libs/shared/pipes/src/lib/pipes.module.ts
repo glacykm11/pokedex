@@ -5,5 +5,6 @@ import { BackgroundColorPipe } from './background-color/background-color.pipe';
 @NgModule({
   imports: [CommonModule],
   declarations: [BackgroundColorPipe],
+  exports: [BackgroundColorPipe],
 })
 export class PipesModule {}
