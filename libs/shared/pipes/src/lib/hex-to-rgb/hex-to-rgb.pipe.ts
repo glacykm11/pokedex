@@ -17,7 +17,7 @@ const rgbColor: RgbColors = {
 };
 
 @Pipe({
-  name: 'hexcolorToRgb',
+  name: 'hexToRgb',
 })
 export class HexToRgbPipe implements PipeTransform {
   transform(value: string): string {
