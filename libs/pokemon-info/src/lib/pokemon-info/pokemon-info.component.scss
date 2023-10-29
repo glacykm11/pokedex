@@ -89,7 +89,15 @@
         }
     }
 }
-
+.attributes {
+    color: var(--pokmon-type-grass, #74CB48);
+    text-align: center;
+    font-family: Poppins;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 16px;
+}
 .borderRight {
     border-right: 1px solid #e0e0e0
 }
