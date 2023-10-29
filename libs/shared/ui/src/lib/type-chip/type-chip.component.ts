@@ -1,11 +1,11 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BackgroundColorPipe } from '@pokedex/pipes';
+import { PipesModule } from '@pokedex/pipes';
 
 @Component({
   selector: 'pokedex-type-chip',
   standalone: true,
-  imports: [CommonModule, BackgroundColorPipe],
+  imports: [CommonModule, PipesModule],
   templateUrl: './type-chip.component.html',
   styleUrls: ['./type-chip.component.scss'],
 })
