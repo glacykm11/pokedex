@@ -83,17 +83,23 @@
           margin: 16px 0;
         }
 
-        &--baseStats{
+        &--baseStats {
             display: grid; 
-            grid-template-columns: 0.5fr 0.5fr 2fr
+            grid-template-columns: 0.5fr 2fr;
+        }
+
+        &--progressBar {
+            display: flex; 
+            align-items: center; 
+            gap: 8px;
+            margin-bottom: 8px;
         }
     }
 }
 .attributes {
-    color: var(--pokmon-type-grass, #74CB48);
     text-align: center;
     font-family: Poppins;
-    font-size: 10px;
+    font-size: 16px;
     font-style: normal;
     font-weight: 700;
     line-height: 16px;
@@ -103,5 +109,14 @@
 }
 
 .textAlignCenter {
-    text-align: center
+    text-align: center;
+    margin-left: 8px;
+}
+
+.w100 {
+    width: 100%;
+}
+
+.mb8 {
+    margin-bottom: 8px;
 }
