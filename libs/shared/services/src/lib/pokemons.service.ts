@@ -9,6 +9,7 @@ import { PokemonCard, PokemonInfo } from '@pokedex/services';
 export class PokemonsService {
   private readonly AMOUNT_POKEMONS = '100';
   private readonly API_VERSION = 'v2';
+  private readonly URI_POKEMON = `https://pokeapi.co/api/${this.API_VERSION}`;
   private readonly URL_POKEMON = `https://pokeapi.co/api/${this.API_VERSION}/pokemon?limit=${this.AMOUNT_POKEMONS}&offset=0`;
 
   constructor(private httpClient: HttpClient) {}
@@ -30,11 +31,31 @@ export class PokemonsService {
     return this.httpClient.get(url);
   }
 
+  public getPokemonById(id: string): Observable<PokemonInfo> {
+    return this.httpClient
+      .get(`${this.URI_POKEMON}/pokemon/${id}/`)
+      .pipe(map((valor: any) => this.pokemonAboutMapper(valor)));
+  }
+
   private pokemonCardMapper(pokemon: PokemonInfo[]): PokemonCard[] {
     return pokemon.map((value: PokemonInfo) => ({
       id: value.id.toString(),
       image: value.sprites.other['official-artwork'].front_default,
       name: value.name,
     }));
+  }
+
+  private pokemonAboutMapper(pokemonInfo: PokemonInfo): any {
+    return {
+      abilities: pokemonInfo.abilities,
+      name: pokemonInfo.name,
+      height: pokemonInfo.height,
+      id: pokemonInfo.id,
+      image: pokemonInfo.sprites.other['official-artwork'].front_default,
+      stats: pokemonInfo.stats,
+      types: pokemonInfo.types,
+      weight: pokemonInfo.weight,
+      mainType: pokemonInfo.types[0].type.name,
+    };
   }
 }
