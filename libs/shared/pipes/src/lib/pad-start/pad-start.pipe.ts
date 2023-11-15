@@ -5,7 +5,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class PadStartPipe implements PipeTransform {
   transform(value: number | string): string {
-    const valueWithPadStart = value.toString().padStart(3, '0');
+    const valueWithPadStart =
+      value != undefined ? value.toString().padStart(3, '0') : '';
 
     return valueWithPadStart;
   }

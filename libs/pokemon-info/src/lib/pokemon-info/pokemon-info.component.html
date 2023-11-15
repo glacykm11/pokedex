@@ -44,15 +44,16 @@
             style="border-right: 1px solid #e0e0e0"
           ></pokedex-attribute>
           <pokedex-attribute
-            value="Chlorophyll
-            Overgrow"
+            style="word-spacing: 9999px"
+            [value]="pokemonInfo.abilities"
             description="Moves"
           ></pokedex-attribute>
         </div>
-        <p class="details__cardWrapper--description">
-          There is a plant seed on its back right from the day this Pokémon is
-          born. The seed slowly grows larger.
-        </p>
+        <ng-container *ngIf="pokemonSpecies$ | async as pokemonSpecies">
+          <p class="details__cardWrapper--description">
+            {{ pokemonSpecies.description }}
+          </p>
+        </ng-container>
         <p
           class="details__cardWrapper--title"
           [style.color]="pokemonInfo.mainType | backgroundColor"

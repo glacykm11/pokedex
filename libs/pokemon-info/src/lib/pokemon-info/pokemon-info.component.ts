@@ -10,19 +10,30 @@ import { Observable, Subscription } from 'rxjs';
 })
 export class PokemonInfoComponent implements OnDestroy {
   public pokemonInfo$!: Observable<any>;
+  public pokemonSpecies$!: Observable<any>;
   private pokemonId!: string;
   private routeSub!: Subscription;
+  private flowThroughApp!: boolean;
 
   constructor(
     private router: Router,
     private pokemonService: PokemonsService,
     private activatedRoute: ActivatedRoute
   ) {
-    this.activatedRoute.params.subscribe((params) => {
+    this.routeSub = this.activatedRoute.params.subscribe((params) => {
       this.pokemonId = params['id'];
     });
-    this.pokemonInfo$ = this.pokemonService.getPokemonById(this.pokemonId);
-    this.pokemonInfo$.subscribe((x) => console.log(x));
+    this.routeSub = this.activatedRoute.fragment.subscribe((fragment) =>
+      fragment != null
+        ? (this.flowThroughApp = true)
+        : (this.flowThroughApp = false)
+    );
+    this.pokemonInfo$ = this.flowThroughApp
+      ? this.pokemonService.getPokemonInfoAsObservable(this.pokemonId)
+      : this.pokemonService.getPokemonById(this.pokemonId);
+    this.pokemonSpecies$ = this.pokemonService.getPokemonSpeciesById(
+      this.pokemonId
+    );
   }
 
   ngOnDestroy() {

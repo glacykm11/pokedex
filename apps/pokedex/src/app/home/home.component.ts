@@ -24,6 +24,6 @@ export class HomeComponent implements OnInit {
   }
 
   private navigateToPokemonInfoPage(pokemonId: string): void {
-    this.router.navigate([`pokemon-info/${pokemonId}`]);
+    this.router.navigate([`pokemon-info/${pokemonId}`], { fragment: 'flow' });
   }
 }
