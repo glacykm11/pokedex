@@ -8,6 +8,7 @@ import {
   AttributeComponent,
   ProgressBarComponent,
 } from '@pokedex/ui';
+import { PipesModule } from '@pokedex/pipes';
 
 @NgModule({
   declarations: [PokemonInfoComponent],
@@ -17,6 +18,7 @@ import {
     TypeChipComponent,
     AttributeComponent,
     ProgressBarComponent,
+    PipesModule,
   ],
   exports: [PokemonInfoComponent],
 })
