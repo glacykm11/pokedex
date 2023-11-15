@@ -1,9 +1,11 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { PipesModule } from '@pokedex/pipes';
 
 @Component({
   selector: 'pokedex-card',
   templateUrl: './card.component.html',
   standalone: true,
+  imports: [PipesModule],
   styleUrls: ['./card.component.scss'],
 })
 export class CardComponent {
