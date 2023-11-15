@@ -33,13 +33,13 @@
         <div class="details__cardWrapper--about">
           <pokedex-attribute
             icon="assets/weight-icon.svg"
-            value="6,9 kg"
+            [value]="pokemonInfo.weight | hectogramsToKilograms"
             description="Weigth"
             style="border-right: 1px solid #e0e0e0"
           ></pokedex-attribute>
           <pokedex-attribute
             icon="assets/ruler-icon.svg"
-            value="0,7 m"
+            [value]="pokemonInfo.height | decimetresToMetres"
             description="Height"
             style="border-right: 1px solid #e0e0e0"
           ></pokedex-attribute>
