@@ -1,110 +1,90 @@
-<section class="details" [style.background]="'var(--pokemon-type-grass)'">
-  <div class="details__header">
-    <img src="assets/arrowBack-icon.svg" (click)="navigateToHome()" />
-    <p class="details__title">Bulbasaur</p>
-    <p class="details__id">#001</p>
-  </div>
-  <div class="details__imageWrapper">
-    <img
-      src="assets/pokeball-background.svg"
-      class="details__imageWrapper--pokeball"
-    />
-    <img
-      src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png"
-      class="details__imageWrapper--pokemon"
-    />
-  </div>
-
-  <div class="details__cardWrapper">
-    <div class="details__cardWrapper--typeChips">
-      <pokedex-type-chip pokemonType="Grass"></pokedex-type-chip>
-      <pokedex-type-chip pokemonType="Poison"></pokedex-type-chip>
+<ng-container *ngIf="pokemonInfo$ | async as pokemonInfo">
+  <section
+    class="details"
+    [style.background]="pokemonInfo.mainType | backgroundColor"
+  >
+    <div class="details__header">
+      <img src="assets/arrowBack-icon.svg" (click)="navigateToHome()" />
+      <p class="details__title">{{ pokemonInfo.name }}</p>
+      <p class="details__id">#{{ pokemonInfo.id | padStart }}</p>
     </div>
-    <section>
-      <p class="details__cardWrapper--title">About</p>
-      <div class="details__cardWrapper--about">
-        <pokedex-attribute
-          icon="assets/weight-icon.svg"
-          value="6,9 kg"
-          description="Weigth"
-          style="border-right: 1px solid #e0e0e0"
-        ></pokedex-attribute>
-        <pokedex-attribute
-          icon="assets/ruler-icon.svg"
-          value="0,7 m"
-          description="Height"
-          style="border-right: 1px solid #e0e0e0"
-        ></pokedex-attribute>
-        <pokedex-attribute
-          value="Chlorophyll
-          Overgrow"
-          description="Moves"
-        ></pokedex-attribute>
+    <div class="details__imageWrapper">
+      <img
+        src="assets/pokeball-background.svg"
+        class="details__imageWrapper--pokeball"
+      />
+      <img [src]="pokemonInfo.image" class="details__imageWrapper--pokemon" />
+    </div>
+
+    <div class="details__cardWrapper">
+      <div class="details__cardWrapper--typeChips">
+        <pokedex-type-chip
+          *ngFor="let pokemonInfo of pokemonInfo.types"
+          [pokemonType]="pokemonInfo.type.name"
+        ></pokedex-type-chip>
       </div>
-      <p class="details__cardWrapper--description">
-        There is a plant seed on its back right from the day this Pokémon is
-        born. The seed slowly grows larger.
-      </p>
-      <p class="details__cardWrapper--title">Base Stats</p>
-      <div class="details__cardWrapper--baseStats">
-        <section class="borderRight">
-          <article class="attributes mb8">HP</article>
-          <article class="attributes mb8">ATK</article>
-          <article class="attributes mb8">DEF</article>
-          <article class="attributes mb8">SATK</article>
-          <article class="attributes mb8">SDEF</article>
-          <article class="attributes mb8">SPD</article>
-        </section>
-        <section>
-          <article class="details__cardWrapper--progressBar">
-            <p class="attributes textAlignCenter">045</p>
-            <pokedex-progress-bar
-              class="w100"
-              pokemonType="grass"
-            ></pokedex-progress-bar>
-          </article>
-
-          <article class="details__cardWrapper--progressBar">
-            <p class="attributes textAlignCenter">045</p>
-            <pokedex-progress-bar
-              class="w100"
-              pokemonType="grass"
-            ></pokedex-progress-bar>
-          </article>
-
-          <article class="details__cardWrapper--progressBar">
-            <p class="attributes textAlignCenter">045</p>
-            <pokedex-progress-bar
-              class="w100"
-              pokemonType="grass"
-            ></pokedex-progress-bar>
-          </article>
-
-          <article class="details__cardWrapper--progressBar">
-            <p class="attributes textAlignCenter">045</p>
-            <pokedex-progress-bar
-              class="w100"
-              pokemonType="grass"
-            ></pokedex-progress-bar>
-          </article>
-
-          <article class="details__cardWrapper--progressBar">
-            <p class="attributes textAlignCenter">045</p>
-            <pokedex-progress-bar
-              class="w100"
-              pokemonType="grass"
-            ></pokedex-progress-bar>
-          </article>
-
-          <article class="details__cardWrapper--progressBar">
-            <p class="attributes textAlignCenter">045</p>
-            <pokedex-progress-bar
-              class="w100"
-              pokemonType="grass"
-            ></pokedex-progress-bar>
-          </article>
-        </section>
-      </div>
-    </section>
-  </div>
-</section>
+      <section>
+        <p
+          class="details__cardWrapper--title"
+          [style.color]="pokemonInfo.mainType | backgroundColor"
+        >
+          About
+        </p>
+        <div class="details__cardWrapper--about">
+          <pokedex-attribute
+            icon="assets/weight-icon.svg"
+            value="6,9 kg"
+            description="Weigth"
+            style="border-right: 1px solid #e0e0e0"
+          ></pokedex-attribute>
+          <pokedex-attribute
+            icon="assets/ruler-icon.svg"
+            value="0,7 m"
+            description="Height"
+            style="border-right: 1px solid #e0e0e0"
+          ></pokedex-attribute>
+          <pokedex-attribute
+            value="Chlorophyll
+            Overgrow"
+            description="Moves"
+          ></pokedex-attribute>
+        </div>
+        <p class="details__cardWrapper--description">
+          There is a plant seed on its back right from the day this Pokémon is
+          born. The seed slowly grows larger.
+        </p>
+        <p
+          class="details__cardWrapper--title"
+          [style.color]="pokemonInfo.mainType | backgroundColor"
+        >
+          Base Stats
+        </p>
+        <div class="details__cardWrapper--baseStats">
+          <section class="borderRight">
+            <article
+              *ngFor="let stats of pokemonInfo.stats"
+              [style.color]="pokemonInfo.mainType | backgroundColor"
+              class="attributes mb8"
+            >
+              {{ stats.stat.name | convertStatsToUpperCase }}
+            </article>
+          </section>
+          <section>
+            <article
+              class="details__cardWrapper--progressBar"
+              *ngFor="let stat of pokemonInfo.stats"
+            >
+              <p class="attributes textAlignCenter">
+                {{ stat.base_stat | padStart }}
+              </p>
+              <pokedex-progress-bar
+                class="w100"
+                [pokemonType]="pokemonInfo.mainType"
+              ></pokedex-progress-bar>
+            </article>
+          </section>
+        </div>
+      </section>
+    </div>
+  </section>
+</ng-container>
