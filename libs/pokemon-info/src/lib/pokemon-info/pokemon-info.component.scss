@@ -19,6 +19,7 @@
     &__title {
         @include fontStyle();
         font-size: 24px;
+        text-transform: capitalize;
     }
 
     &__id {
