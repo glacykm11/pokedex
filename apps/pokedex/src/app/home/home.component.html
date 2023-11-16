@@ -1,7 +1,7 @@
 <div class="container__home">
   <pokedex-header></pokedex-header>
   <section class="wrapper__search">
-    <pokedex-search></pokedex-search>
+    <pokedex-search style="visibility: hidden"></pokedex-search>
   </section>
   <section class="wrapper__cards">
     <ng-container *ngIf="pokemon$ | async as pokemons; else loading">

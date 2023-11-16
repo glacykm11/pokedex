@@ -1,0 +1,44 @@
+section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--grayscale-background, #fff);
+
+    h1 {
+        letter-spacing: 8px;
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 6rem;
+    }
+
+    img {
+        width: 4rem;
+    }
+
+    p {
+        font-weight: bold;
+        font-size: 1.5rem;
+    }
+
+    button {
+        all: unset;
+        width: 5rem;
+        background-color: var(--identity-primary);
+        border-radius: 16px;
+        text-align: center;
+        padding: 8px;
+        color: #fff;
+        font-weight: bold;
+        margin-top: 24px;
+        cursor: pointer;
+        transition: ease 0.5s;
+    }
+    button:hover {
+        background-color: #000;
+        transform: scale(1.1);
+    }
+}

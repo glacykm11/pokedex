@@ -42,19 +42,26 @@ export class PokemonInfoComponent {
 
   public navigateToForward(id: any) {
     const idForward = id + 1;
+    const fragment = this.flowThroughApp
+      ? {
+          fragment: 'flow',
+        }
+      : {};
 
     this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
-      this.router.navigate([`pokemon-info/${idForward}`], { fragment: 'flow' });
+      this.router.navigate([`pokemon-info/${idForward}`], fragment);
     });
   }
 
   public navigateToBackward(id: any) {
     const idBackward = id - 1;
-
+    const fragment = this.flowThroughApp
+      ? {
+          fragment: 'flow',
+        }
+      : {};
     this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
-      this.router.navigate([`pokemon-info/${idBackward}`], {
-        fragment: 'flow',
-      });
+      this.router.navigate([`pokemon-info/${idBackward}`], fragment);
     });
   }
 }

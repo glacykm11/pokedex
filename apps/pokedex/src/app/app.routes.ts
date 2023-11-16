@@ -1,5 +1,6 @@
 import { Route } from '@angular/router';
 import { HomeComponent } from './home/home.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 export const appRoutes: Route[] = [
   {
@@ -10,5 +11,9 @@ export const appRoutes: Route[] = [
     path: 'pokemon-info/:id',
     loadChildren: () =>
       import('@pokedex/pokemon-info').then((m) => m.PokemonInfoModule),
+  },
+  {
+    path: '**',
+    component: NotFoundComponent,
   },
 ];
