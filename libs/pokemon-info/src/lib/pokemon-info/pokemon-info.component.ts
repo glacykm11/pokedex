@@ -8,7 +8,7 @@ import { Observable, Subscription } from 'rxjs';
   templateUrl: './pokemon-info.component.html',
   styleUrls: ['./pokemon-info.component.scss'],
 })
-export class PokemonInfoComponent implements OnDestroy {
+export class PokemonInfoComponent {
   public pokemonInfo$!: Observable<any>;
   public pokemonSpecies$!: Observable<any>;
   private pokemonId!: string;
@@ -36,13 +36,25 @@ export class PokemonInfoComponent implements OnDestroy {
     );
   }
 
-  ngOnDestroy() {
-    if (this.routeSub) {
-      this.routeSub.unsubscribe();
-    }
-  }
-
   public navigateToHome(): void {
     this.router.navigate(['/']);
+  }
+
+  public navigateToForward(id: any) {
+    const idForward = id + 1;
+
+    this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+      this.router.navigate([`pokemon-info/${idForward}`], { fragment: 'flow' });
+    });
+  }
+
+  public navigateToBackward(id: any) {
+    const idBackward = id - 1;
+
+    this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+      this.router.navigate([`pokemon-info/${idBackward}`], {
+        fragment: 'flow',
+      });
+    });
   }
 }

@@ -9,6 +9,7 @@ import {
   ProgressBarComponent,
 } from '@pokedex/ui';
 import { PipesModule } from '@pokedex/pipes';
+import { RouterLink } from '@angular/router';
 
 @NgModule({
   declarations: [PokemonInfoComponent],
@@ -19,6 +20,7 @@ import { PipesModule } from '@pokedex/pipes';
     AttributeComponent,
     ProgressBarComponent,
     PipesModule,
+    RouterLink,
   ],
   exports: [PokemonInfoComponent],
 })

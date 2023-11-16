@@ -13,7 +13,17 @@
         src="assets/pokeball-background.svg"
         class="details__imageWrapper--pokeball"
       />
+      <img
+        [style.visibility]="pokemonInfo.id === 1 ? 'hidden' : 'visible'"
+        (click)="navigateToBackward(pokemonInfo.id)"
+        src="assets/arrowLeft-icon.svg"
+      />
       <img [src]="pokemonInfo.image" class="details__imageWrapper--pokemon" />
+      <img
+        style="z-index: 2"
+        (click)="navigateToForward(pokemonInfo.id)"
+        src="assets/arrowRight-icon.svg"
+      />
     </div>
 
     <div class="details__cardWrapper">
