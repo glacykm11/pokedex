@@ -1,6 +1,6 @@
 import { Route } from '@angular/router';
 import { HomeComponent } from './home/home.component';
-import { NotFoundComponent } from './not-found/not-found.component';
+import { NotFoundComponent } from '@pokedex/not-found';
 
 export const appRoutes: Route[] = [
   {

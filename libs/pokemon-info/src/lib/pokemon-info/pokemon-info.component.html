@@ -1,4 +1,4 @@
-<ng-container *ngIf="pokemonInfo$ | async as pokemonInfo">
+<ng-container *ngIf="pokemonInfo$ | async as pokemonInfo; else notFound">
   <section
     class="details"
     [style.background]="pokemonInfo.mainType | backgroundColor"
@@ -20,6 +20,7 @@
       />
       <img [src]="pokemonInfo.image" class="details__imageWrapper--pokemon" />
       <img
+        [style.visibility]="pokemonInfo.id === 1017 ? 'hidden' : 'visible'"
         style="z-index: 2"
         (click)="navigateToForward(pokemonInfo.id)"
         src="assets/arrowRight-icon.svg"
@@ -99,3 +100,6 @@
     </div>
   </section>
 </ng-container>
+<ng-template #notFound>
+  <pokedex-not-found></pokedex-not-found>
+</ng-template>

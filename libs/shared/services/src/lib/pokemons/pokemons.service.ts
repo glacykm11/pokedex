@@ -15,7 +15,7 @@ import { MappersService } from '../mappers/mappers.service';
   providedIn: 'root',
 })
 export class PokemonsService {
-  private readonly AMOUNT_POKEMONS = '100';
+  private readonly AMOUNT_POKEMONS = '1017';
   private readonly API_VERSION = 'v2';
   private readonly URI_POKEMON = `https://pokeapi.co/api/${this.API_VERSION}`;
   private readonly URL_POKEMON = `https://pokeapi.co/api/${this.API_VERSION}/pokemon?limit=${this.AMOUNT_POKEMONS}&offset=0`;

@@ -5,7 +5,6 @@ import { AppComponent } from './app.component';
 import { appRoutes } from './app.routes';
 import { HomeModule } from './home/home.module';
 import { HttpClientModule } from '@angular/common/http';
-import { PokemonInfoModule } from '@pokedex/pokemon-info';
 
 @NgModule({
   declarations: [AppComponent],
@@ -14,7 +13,6 @@ import { PokemonInfoModule } from '@pokedex/pokemon-info';
     RouterModule.forRoot(appRoutes, { initialNavigation: 'enabledBlocking' }),
     HomeModule,
     HttpClientModule,
-    PokemonInfoModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

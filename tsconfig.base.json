@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@pokedex/not-found": ["libs/not-found/src/index.ts"],
       "@pokedex/pipes": ["libs/shared/pipes/src/index.ts"],
       "@pokedex/pokemon-info": ["libs/pokemon-info/src/index.ts"],
       "@pokedex/services": ["libs/shared/services/src/index.ts"],
