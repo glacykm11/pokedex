@@ -9,14 +9,16 @@ import { Observable } from 'rxjs';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  public pokemon$!: Observable<PokemonCard[]>;
+  public pokemon$!: Observable<any>;
   constructor(
     private pokemonService: PokemonsService,
     private router: Router
   ) {}
 
   ngOnInit() {
-    this.pokemon$ = this.pokemonService.getPokemonNames();
+    this.pokemonService.pokemonArrayIsEmpty.value == true
+      ? (this.pokemon$ = this.pokemonService.getPokemonNames())
+      : (this.pokemon$ = this.pokemonService.getPokemonsInfosAsObservable());
   }
 
   public getCardClick(pokemonId: string): void {

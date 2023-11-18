@@ -15,6 +15,7 @@ import { MappersService } from '../mappers/mappers.service';
   providedIn: 'root',
 })
 export class PokemonsService {
+  public pokemonArrayIsEmpty = new BehaviorSubject(true);
   private readonly AMOUNT_POKEMONS = '1017';
   private readonly API_VERSION = 'v2';
   private readonly URI_POKEMON = `https://pokeapi.co/api/${this.API_VERSION}`;
@@ -36,15 +37,18 @@ export class PokemonsService {
         return forkJoin(allObs$);
       }),
       map((valor: any) => this.mapperService.pokemonInfoMapper(valor)),
-      tap((pokemonInfo) => this.pokemonsInfos$.next(pokemonInfo))
+      tap((pokemonInfo) => this.pokemonsInfos$.next(pokemonInfo)),
+      tap(() => this.pokemonArrayIsEmpty.next(false))
     );
+  }
+
+  public getPokemonsInfosAsObservable() {
+    return this.pokemonsInfos$.asObservable();
   }
 
   public getPokemonInfoAsObservable(id: string): Observable<any> {
     const realId = Number(id) - 1;
     const pokemonsInfos = this.pokemonsInfos$.value;
-
-    this.pokemonsInfos$.complete();
 
     const mapperPokemonInfo: any = pokemonsInfos[realId];
 
