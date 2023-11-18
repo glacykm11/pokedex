@@ -15,7 +15,9 @@ export class SearchComponent {
   @Output() typingText = new EventEmitter<string | null>();
 
   public emitSearchText() {
-    this.showCloseButton = true;
+    this.searchText.value === ''
+      ? (this.showCloseButton = false)
+      : (this.showCloseButton = true);
     this.typingText.emit(this.searchText.value);
   }
 
