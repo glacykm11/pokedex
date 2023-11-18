@@ -1,2 +1,14 @@
-<input placeholder="Search" />
-<img src="assets/search-icon.svg" alt="" />
+<input
+  placeholder="Search"
+  [formControl]="searchText"
+  (keyup)="emitSearchText()"
+/>
+<img class="search" src="assets/search-icon.svg" alt="" />
+<ng-container *ngIf="showCloseButton">
+  <img
+    (click)="cleanInput()"
+    class="close"
+    src="assets/close-icon.svg"
+    alt=""
+  />
+</ng-container>

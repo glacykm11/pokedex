@@ -23,8 +23,14 @@ input {
     margin-left: 8px;
 }
 
-img {
+.search {
     position: absolute;
     top: 68px;
     left: 18px;
+}
+
+.close {
+    position: absolute;
+    top: 68px;
+    right: 53px;
 }

@@ -4,6 +4,7 @@ import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
 import { CardComponent, SearchComponent } from '@pokedex/ui';
 import { HeaderComponent } from '@pokedex/ui';
+import { PipesModule } from '@pokedex/pipes';
 
 @NgModule({
   declarations: [HomeComponent],
@@ -13,6 +14,7 @@ import { HeaderComponent } from '@pokedex/ui';
     CardComponent,
     HeaderComponent,
     SearchComponent,
+    PipesModule,
   ],
 })
 export class HomeModule {}

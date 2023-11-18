@@ -6,6 +6,7 @@ import { ConvertStatsToUpperCasePipe } from './convert-stats-to-upper-case/conve
 import { PadStartPipe } from './pad-start/pad-start.pipe';
 import { DecimetresToMetresPipe } from './decimetres-to-metres/decimetres-to-metres.pipe';
 import { HectogramsToKilogramsPipe } from './hectograms-to-kilograms/hectograms-to-kilograms.pipe';
+import { FilterPokemonsPipe } from './filter-pokemons/filter-pokemons.pipe';
 
 @NgModule({
   imports: [CommonModule],
@@ -16,6 +17,7 @@ import { HectogramsToKilogramsPipe } from './hectograms-to-kilograms/hectograms-
     PadStartPipe,
     DecimetresToMetresPipe,
     HectogramsToKilogramsPipe,
+    FilterPokemonsPipe,
   ],
   exports: [
     BackgroundColorPipe,
@@ -24,6 +26,7 @@ import { HectogramsToKilogramsPipe } from './hectograms-to-kilograms/hectograms-
     PadStartPipe,
     DecimetresToMetresPipe,
     HectogramsToKilogramsPipe,
+    FilterPokemonsPipe,
   ],
 })
 export class PipesModule {}

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { PokemonCard, PokemonsService } from '@pokedex/services';
+import { PokemonsService } from '@pokedex/services';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -10,6 +10,7 @@ import { Observable } from 'rxjs';
 })
 export class HomeComponent implements OnInit {
   public pokemon$!: Observable<any>;
+  public searchText!: string | null;
   constructor(
     private pokemonService: PokemonsService,
     private router: Router
@@ -27,5 +28,10 @@ export class HomeComponent implements OnInit {
 
   private navigateToPokemonInfoPage(pokemonId: string): void {
     this.router.navigate([`pokemon-info/${pokemonId}`], { fragment: 'flow' });
+  }
+
+  public getSearchText(text: string | null) {
+    this.searchText = text;
+    console.log(text);
   }
 }
