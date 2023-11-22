@@ -32,6 +32,5 @@ export class HomeComponent implements OnInit {
 
   public getSearchText(text: string | null) {
     this.searchText = text;
-    console.log(text);
   }
 }
