@@ -17,6 +17,9 @@
 
 .wrapper__search {
     margin: 8px 12px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .loader {

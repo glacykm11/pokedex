@@ -2,6 +2,7 @@
   <pokedex-header></pokedex-header>
   <section class="wrapper__search">
     <pokedex-search (typingText)="getSearchText($event)"></pokedex-search>
+    <pokedex-sort></pokedex-sort>
   </section>
   <section class="wrapper__cards">
     <ng-container *ngIf="pokemon$ | async as pokemons; else loading">
