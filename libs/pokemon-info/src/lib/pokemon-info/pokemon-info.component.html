@@ -4,26 +4,26 @@
     [style.background]="pokemonInfo.mainType | backgroundColor"
   >
     <div class="details__header">
-      <img src="assets/arrowBack-icon.svg" (click)="navigateToHome()" />
+      <img src="assets/icons/arrowBack-icon.svg" (click)="navigateToHome()" />
       <p class="details__title">{{ pokemonInfo.name }}</p>
       <p class="details__id">#{{ pokemonInfo.id | padStart }}</p>
     </div>
     <div class="details__imageWrapper">
       <img
-        src="assets/pokeball-background.svg"
+        src="assets/images/pokeball-background.svg"
         class="details__imageWrapper--pokeball"
       />
       <img
         [style.visibility]="pokemonInfo.id === 1 ? 'hidden' : 'visible'"
         (click)="navigateToBackward(pokemonInfo.id)"
-        src="assets/arrowLeft-icon.svg"
+        src="assets/icons/arrowLeft-icon.svg"
       />
       <img [src]="pokemonInfo.image" class="details__imageWrapper--pokemon" />
       <img
         [style.visibility]="pokemonInfo.id === 1017 ? 'hidden' : 'visible'"
         style="z-index: 2"
         (click)="navigateToForward(pokemonInfo.id)"
-        src="assets/arrowRight-icon.svg"
+        src="assets/icons/arrowRight-icon.svg"
       />
     </div>
 
@@ -43,13 +43,13 @@
         </p>
         <div class="details__cardWrapper--about">
           <pokedex-attribute
-            icon="assets/weight-icon.svg"
+            icon="assets/icons/weight-icon.svg"
             [value]="pokemonInfo.weight | hectogramsToKilograms"
             description="Weigth"
             style="border-right: 1px solid #e0e0e0"
           ></pokedex-attribute>
           <pokedex-attribute
-            icon="assets/ruler-icon.svg"
+            icon="assets/icons/ruler-icon.svg"
             [value]="pokemonInfo.height | decimetresToMetres"
             description="Height"
             style="border-right: 1px solid #e0e0e0"
