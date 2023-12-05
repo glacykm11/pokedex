@@ -12,3 +12,5 @@ export * from './lib/attribute/attribute.component';
 export * from './lib/progress-bar/progress-bar.component';
 
 export * from './lib/sort/sort.component';
+
+export * from './lib/sort-card/sort-card.component';
