@@ -34,10 +34,4 @@ export class HomeComponent implements OnInit {
   public getSearchText(text: string | null) {
     this.searchText = text;
   }
-
-  public getClickSortButton(sortButton: any) {
-    console.log(this.showSortCard, 'valor Inicial')
-    this.showSortCard = !this.showSortCard;
-    console.log(this.showSortCard, 'valor dps')
-  }
 }
