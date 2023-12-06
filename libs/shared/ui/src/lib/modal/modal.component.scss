@@ -1,0 +1,20 @@
+.modal {
+    min-width: 320px;
+    position: fixed;
+    left: 97%;
+    padding: 24px;
+    top: 26%;
+    transform: translate(-50%, -50%);
+    z-index: 11;
+}
+  
+.overlay {
+    background: #000;
+    height: 100vh;
+    left: 0;
+    opacity: 0.5;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    z-index: 10;
+}

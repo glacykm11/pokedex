@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { PokemonsService } from '@pokedex/services';
 import { Observable } from 'rxjs';
@@ -11,6 +11,7 @@ import { Observable } from 'rxjs';
 export class HomeComponent implements OnInit {
   public pokemon$!: Observable<any>;
   public searchText!: string | null;
+  public showSortCard = false;
   constructor(
     private pokemonService: PokemonsService,
     private router: Router
@@ -32,5 +33,11 @@ export class HomeComponent implements OnInit {
 
   public getSearchText(text: string | null) {
     this.searchText = text;
+  }
+
+  public getClickSortButton(sortButton: any) {
+    console.log(this.showSortCard, 'valor Inicial')
+    this.showSortCard = !this.showSortCard;
+    console.log(this.showSortCard, 'valor dps')
   }
 }

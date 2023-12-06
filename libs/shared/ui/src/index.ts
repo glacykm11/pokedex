@@ -14,3 +14,5 @@ export * from './lib/progress-bar/progress-bar.component';
 export * from './lib/sort/sort.component';
 
 export * from './lib/sort-card/sort-card.component';
+
+export * from './lib/modal/modal.component';
