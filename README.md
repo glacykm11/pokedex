@@ -19,16 +19,22 @@
 
 ## Demo
 
+### Home Page
+
 <h1 align="center">
   <img alt="HomeScreenshot" title="#HomeScreenshot" src="./apps/pokedex/src/assets/screenshots/screenshot-home.png" />
 </h1>
 
-<h1 align="center">
-  <img alt="PokemonInfoScreenshot" title="#PokemonInfoScreenshot" src="./apps/pokedex/src/assets/screenshots/screenshot-pokemon-info-page.png" />
-</h1>
+### Sort By Button
 
 <h1 align="center">
   <img alt="SortFeatureScreenshot" title="#SortFeatureScreenshot" src="./apps/pokedex/src/assets/screenshots/screenshot-sort-feature.png" />
+</h1>
+
+### Pokemon Detail Infos Page
+
+<h1 align="center">
+  <img alt="PokemonInfoScreenshot" title="#PokemonInfoScreenshot" src="./apps/pokedex/src/assets/screenshots/screenshot-pokemon-info-page.png" />
 </h1>
 
 <a alt="Nx logo" href="https://nx.dev" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="45"></a>
